@@ -32,6 +32,8 @@ import PrivacyPolicyScreen from "../pages/PrivacyPolicy";
 
 
 
+import SettingsScreen from "../pages/Settings/firstPage";
+
 const Stack = createNativeStackNavigator();
 
 export function AppRoutes() {
@@ -58,6 +60,7 @@ export function AppRoutes() {
         <Stack.Screen name="Recipes" component={RecipesScreen} />
         <Stack.Screen name="RecipeDetail" component={RecipeDetailScreen} />
 
+
         <Stack.Screen name="Configuracao" component={ConfiguracaoScreen} />
         <Stack.Screen name="Account" component={AccountScreen} />
         <Stack.Screen name="PersonalData" component={PersonalDataScreen} />
@@ -66,6 +69,13 @@ export function AppRoutes() {
         <Stack.Screen name="Appearance" component={AppearanceScreen} />
         <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} />   
         
+
+       <Stack.Screen name="Recipes" component={RecipesScreen}/>
+       <Stack.Screen name="RecipeDetail" component={RecipeDetailScreen}/>
+
+       <Stack.Screen name="Settings" component={SettingsScreen}/>
+       
+
       </Stack.Navigator>
     </NavigationContainer>
 

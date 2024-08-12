@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
 
-export default function ArmflexScreen() {
+export default function ArmScreen () {
     const [distance, setDistance] = useState(0.25);
+    const [passos, setPassos] = useState(0);
+    const [tempo, setTempo] = useState(0); // em segundos
+    const [batimentos, setBatimentos] = useState(0);
+    const [kcal, setKcal] = useState(0);
+    const [ritmo, setRitmo] = useState(0);
+    const [isRunning, setIsRunning] = useState(false);
 
     const increaseDistance = () => {
         setDistance((prev) => parseFloat((prev + 0.25).toFixed(2)));
@@ -14,8 +18,32 @@ export default function ArmflexScreen() {
         setDistance((prev) => (prev > 0.25 ? parseFloat((prev - 0.25).toFixed(2)) : 0.25));
     };
 
+    useEffect(() => {
+        let interval;
+        if (isRunning) {
+            interval = setInterval(() => {
+                setTempo(prevTempo => prevTempo + 1);
+                // Atualize aqui os valores de passos, batimentos, km, kcal e ritmo
+                setPassos(prevPassos => prevPassos + 1); // Simulação
+                setKm(distance);
+                setKcal(prevKcal => prevKcal + 0.05); // Simulação
+                setBatimentos(prevBatimentos => prevBatimentos + 0.2); // Simulação
+                if (km > 0) {
+                    setRitmo((tempo / 60) / km); // em minutos por km
+                }
+            }, 1000); // Atualiza a cada segundo
+        } else if (!isRunning && tempo !== 0) {
+            clearInterval(interval);
+        }
+        return () => clearInterval(interval);
+    }, [isRunning, tempo, km]);
+
     const startExercise = () => {
-        console.log('Início do exercício');
+        setIsRunning(true);
+    };
+
+    const stopExercise = () => {
+        setIsRunning(false);
     };
 
     return (
@@ -23,12 +51,10 @@ export default function ArmflexScreen() {
             <Text style={styles.title}>Exercícios e Atividade Física</Text>
             <Text style={styles.subtitle}>Cronometre seu tempo praticando e veja seu desempenho total.</Text>
             <View style={styles.imagePlaceholder}>
-
                 <Image
                     source={require('../../assets/WhatsApp Image 2024-08-08 at 07.24.03.jpeg')}
                     style={styles.image}
                 />
-
             </View>
             <Text style={styles.label}>Seu objetivo</Text>
             <View style={styles.controls}>
@@ -44,59 +70,28 @@ export default function ArmflexScreen() {
             <TouchableOpacity style={styles.startButton} onPress={startExercise}>
                 <Text style={styles.startButtonText}>Iniciar</Text>
             </TouchableOpacity>
+            <View style={styles.stats}>
+                <Text style={styles.statText}>Passos: {passos}</Text>
+                <Text style={styles.statText}>Tempo: {tempo} s</Text>
+                <Text style={styles.statText}>Batimentos: {batimentos.toFixed(2)} bpm</Text>
+                <Text style={styles.statText}>Distância: {km} km</Text>
+                <Text style={styles.statText}>Calorias: {kcal.toFixed(2)} kcal</Text>
+                <Text style={styles.statText}>Ritmo: {ritmo.toFixed(2)} min/km</Text>
+            </View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
+    // ... seus outros estilos
+
+    stats: {
+        marginTop: 20,
         alignItems: 'center',
-        backgroundColor: '#fff',
-        padding: 20,
     },
-    title: {
-        fontSize: 35,
-        fontWeight: 'bold',
-        marginBottom: 10,
-        right: 40,
-        ontWeight: 'bold',
-    },
-    subtitle: {
-        fontSize: 16,
-        color: '#666',
-        textAlign: 'center',
-        marginBottom: 20,
-        paddingHorizontal: 50,
-        right: 50,
-        
-    },
-    label: {
+    statText: {
         fontSize: 18,
-        marginVertical: 10,
-    },
-    controls: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 20,
-    },
-    button: {
-        width: 50,
-        height: 50,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#e0e0e0',
-        borderRadius: 25,
-        marginHorizontal: 20,
-    },
-    buttonText: {
-        fontSize: 24,
-        color: '#333',
-    },
-    distanceText: {
-        fontSize: 24,
-        fontWeight: 'bold',
+        marginVertical: 5,
     },
     startButton: {
         backgroundColor: '#4CAF50',

@@ -1,85 +1,96 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';import Icon from 'react-native-vector-icons/MaterialIcons';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
-
-const HelpandSupportScrean = () => {
-  const articles = [
-    'Dúvidas sobre cálculos',
-    'Dúvidas sobre cálculos',
-    'Dúvidas sobre cálculos',
-    'Dúvidas sobre cálculos',
-    'Dúvidas sobre cálculos',
-  ];
-
+const HelpandSupportScreen = () => {
   return (
-    <View style={styles.container}>
-      <Image source={require('../../assets/logo.png')} style={styles.icoImage} />
-      <Text style={styles.title}>Como podemos ajudar?</Text>
-      <View style={styles.searchBar}></View>
-      <Text style={styles.sectionTitle}>Artigos Frequentes</Text>
-      {articles.map((article, index) => (
-        <TouchableOpacity key={index} style={styles.articleContainer}>
-          <Text style={styles.articleTitle}>{article}</Text>
-          <Text style={styles.articleSubtitle}>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.header}>
+        <Image source={require('../../assets/logo.png')} style={styles.icoImage} />
+        <Text style={styles.title}>Como podemos ajudar?</Text>
+      </View>
+
+      <View style={styles.section}>
+        
+        <TouchableOpacity style={styles.article}>
+          <Text style={styles.articleTitle}>Dúvidas sobre cálculos</Text>
+          <Text style={styles.articleDescription}>
             Veja como é feito o cálculo da taxa de metabolismo basal e como utilizamos com você.
           </Text>
         </TouchableOpacity>
-      ))}
-    </View>
+
+        <TouchableOpacity style={styles.article}>
+          <Text style={styles.articleTitle}>Como posso melhorar minha saúde?</Text>
+          <Text style={styles.articleDescription}>
+            Nosso app ajuda com seus controles diários, não dispensa consultas médicas.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.article}>
+          <Text style={styles.articleTitle}>Como adicionar alimentos/receitas?</Text>
+          <Text style={styles.articleDescription}>
+            Vá para a tela de alimentos, e nela terá um botão para adicionar o alimento caso não ache em nosso app.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.article}>
+          <Text style={styles.articleTitle}>Como mudar o tema do Aplicativo?</Text>
+          <Text style={styles.articleDescription}>
+            Acesse a configuração e depois clique em aparência, lá você poderá escolher o melhor tema para você.
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.article}>
+          <Text style={styles.articleTitle}> Contato </Text>
+          <Text style={styles.articleDescription}>
+           Para dúvidas entre em contato com nosso endereço de Email: vitalityvisionm@gmail.com
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+
  container: {
    flex: 1,
    padding: 16,
    alignItems: 'center',
    backgroundColor: '#fff',
-   
  },
-   icoImage: {
+  header: {
+    alignItems: 'center',
+    marginBottom: 30,
+  },
+  icoImage: {
     width: 60,
     height: 60,
-    marginTop: 100,
+    marginTop: 70,
   },
   title: {
-    fontWeight: 'bold',
     fontSize: 30,
-    marginTop: 50,
-    textAlign: 'center',
-    paddingHorizontal: 10,
-    marginHorizontal: 0,
-  },
-  searchBar: {
-    height: 30,
-    backgroundColor: '#ccc',
-    borderRadius: 20,
-    marginBottom: 10,
-  },
-  sectionTitle: {
-    fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginTop: 50,
   },
-  articleContainer: {
-    padding: 16,
-    backgroundColor: '#e0e0e0',
+  section: {
+    marginBottom: 20,
+  },
+  article: {
+    backgroundColor: '#f9f9f9',
+    padding: 15,
     borderRadius: 8,
-    marginBottom: 12,
-    width: 360,
-    height: 80
+    marginBottom: 10,
   },
   articleTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 5,
   },
-  articleSubtitle: {
+  articleDescription: {
     fontSize: 14,
-    color: '#666',
+    color: '#777',
+    marginTop: 4,
   },
 });
 
-export default HelpandSupportScrean
+export default HelpandSupportScreen;

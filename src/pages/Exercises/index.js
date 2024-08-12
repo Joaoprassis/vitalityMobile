@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { format, addDays, startOfMonth, parse } from 'date-fns';
+import { format, addDays, startOfMonth, getDate } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import { useNavigation } from '@react-navigation/native';
 
 const Exercises = () => {
-  const [selectedDay, setSelectedDay] = useState('15');
+  const [selectedDay, setSelectedDay] = useState(getDate(new Date()).toString()); // Define o dia atual como dia selecionado inicialmente
   const [dayOfWeek, setDayOfWeek] = useState('');
   const daysInMonth = Array.from({ length: 31 }, (_, i) => (i + 1).toString());
   const navigation = useNavigation(); 
 
   useEffect(() => {
     const calculateDayOfWeek = (day) => {
-      const date = parse(day, 'd', new Date());
       const currentMonthStart = startOfMonth(new Date());
       const selectedDate = addDays(currentMonthStart, day - 1);
       const weekDay = format(selectedDate, 'EEEE', { locale: enUS });
@@ -23,6 +22,8 @@ const Exercises = () => {
     setDayOfWeek(calculateDayOfWeek(selectedDay));
   }, [selectedDay]);
 
+
+  
   const activities = [
     { id: 1, type: 'Caminhada', icon: 'walk', time: '11:45 AM' },
     { id: 2, type: 'Corrida', icon: 'run', time: '8:00 PM' },
@@ -68,7 +69,6 @@ const Exercises = () => {
     </ScrollView>
   );
 };
-
 
 const styles = StyleSheet.create({
   container: {

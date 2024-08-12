@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Icon } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 
 const ConfiguracaoScreen = () => {
   const navigation = useNavigation();
@@ -9,10 +10,10 @@ const ConfiguracaoScreen = () => {
   const routes = [
     { label: 'Conta', route: 'Account' },
     { label: 'Dados Pessoais', route: 'PersonalData' },
-    { label: 'Privacidade e Segurança', route: 'PrivacyAndSecurity' },
+    { label: 'Privacidade e Segurança', route: 'PrivacyPolicy' },
     { label: 'Notificações', route: 'Notifications' },
     { label: 'Aparência', route: 'Appearance' },
-    { label: 'Ajuda e Suporte', route: 'HelpAndSupport' },
+    { label: 'Ajuda', route: 'HelpandSupport' },
     { label: 'Convide amigos', route: 'InviteFriends' },
   ];
 
@@ -62,6 +63,7 @@ const styles = StyleSheet.create({
   },
   profileSection: {
     flex: 1,
+
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -80,8 +82,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     backgroundColor: 'green',
     position: 'absolute',
-    bottom: 0,
-    right: 0,
+    bottom: 10,
+    right: 10,
   },
   buttonsContainer: {
     width: '80%',

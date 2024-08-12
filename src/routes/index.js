@@ -13,26 +13,22 @@ import Homework from "../pages/Homework";
 
 import Exercises from "../pages/Exercises";
 import WalkScreen from "../pages/Walk";
-
+import RunScreen from "../pages/Run";
+import WeightliftherScreen from "../pages/Weightlifther";
+import ArmScreen from "../pages/Arm";
 
 
 
 import RecipesScreen from "../pages/Receits";
 import RecipeDetailScreen from "../pages/Detalhes/RecipeDetail1";
 import ConfiguracaoScreen from '../pages/Configuracao';
-
-
-
+import AppearanceScreen from "../pages/Appearance";
+import HelpandSupportScreen from "../pages/HelpandSupport";
 import AccountScreen from '../pages/Conta';
 import PersonalDataScreen from '../pages/DadosP';
 import InviteFriendsScreen from "../pages/InviteFriends";
-import HelpandSupportScrean from "../pages/HelpandSupport";
-import AppearanceScrean from "../pages/Appearance";
-import { ImportsNotUsedAsValues } from "typescript";
-import Runcreen from "../pages/Run";
-import WeightliftherScreen from "../pages/WeightLifther";
-import Armflexcreen from "../pages/ArmFlex";
-import ArmflexScreen from "../pages/ArmFlex";
+import PrivacyPolicyScreen from "../pages/PrivacyPolicy";
+
 
 
 
@@ -55,10 +51,9 @@ export function AppRoutes() {
 
         <Stack.Screen name="Exercises" component={Exercises} />
         <Stack.Screen name="WalkScreen" component={WalkScreen} />
-        <Stack.Screen name="Run" component={Runcreen} />
-        <Stack.Screen name="Weighlifther" component={WeightliftherScreen} />
-        <Stack.Screen name="Armflex" component={ArmflexScreen} />
-
+        <Stack.Screen name="Weightlifther" component={WeightliftherScreen} />
+        <Stack.Screen name="Run" component={RunScreen } />
+        <Stack.Screen name="Arm" component={ArmScreen} />
 
         <Stack.Screen name="Recipes" component={RecipesScreen} />
         <Stack.Screen name="RecipeDetail" component={RecipeDetailScreen} />
@@ -66,10 +61,10 @@ export function AppRoutes() {
         <Stack.Screen name="Configuracao" component={ConfiguracaoScreen} />
         <Stack.Screen name="Account" component={AccountScreen} />
         <Stack.Screen name="PersonalData" component={PersonalDataScreen} />
-        <Stack.Screen name="HelpAndSupport" component={HelpandSupportScrean} />
+        <Stack.Screen name="HelpandSupport" component={HelpandSupportScreen} />
         <Stack.Screen name="InviteFriends" component={InviteFriendsScreen} />
-        <Stack.Screen name="Appearance" component={AppearanceScrean} />
-      
+        <Stack.Screen name="Appearance" component={AppearanceScreen} />
+        <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} />   
         
       </Stack.Navigator>
     </NavigationContainer>

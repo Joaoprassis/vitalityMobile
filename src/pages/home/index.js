@@ -16,7 +16,7 @@ const navigation = useNavigation()
     <View style={styles.container}>
 
      <Text style={styles.titulo}>Bem-vindo à Nossa Plataforma de Saúde Online! </Text>    
-    <Text style={styles.subtitulo}>Estamos empolgados em tê-lo(a) conosco em nossa comunidade dedicada a melhorar o seu bem-estar. Nossa plataforma foi desenvolvida para facilitar o gerenciamento da sua saúde.
+    <Text style={styles.subtitulo}>Estamos empolgados em tê-lo(a)conosco em nossa comunidade dedicada a melhorar o seu bem-estar. {'\n'}Nossa plataforma foi desenvolvidapara fa cilitar o gerenciamento da sua saúde.
     </Text>
 
  
@@ -36,7 +36,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-   
+    backgroundColor: "#fff",
+  
   },
 
 
@@ -49,16 +50,14 @@ const styles = StyleSheet.create({
     color: "#47AC5D",
     paddingHorizontal: 10,
     marginHorizontal: 10,
+    marginBottom: 20,
   },
   
   subtitulo: {
-    marginTop: 10,
-    textAlign:'left',
-    flexWrap: 'wrap',
-    color: "#000",
-    paddingHorizontal: 10,
-    marginHorizontal: 17,
-    marginBottom: 20
+    fontSize: 14,
+    marginBottom: 10,
+    color: '#777',
+    right:4,
   },
 
   botao: {

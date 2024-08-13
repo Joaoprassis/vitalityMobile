@@ -21,15 +21,14 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.title}>
-        <Text>Bem-Vindo(a)</Text>
-      </View>
+      <Text style={styles.title}> Bem-Vindo(a) </Text>
 
       <TextInput
         style={styles.textInput}
         onChangeText={setUsername}
         value={username}
-        placeholder="Seu username"
+        placeholder="Nome de usúario
+        "
       />
 
       <TextInput
@@ -43,7 +42,7 @@ export default function App() {
         style={styles.textInput}
         onChangeText={setPassword}
         value={password}
-        placeholder="Sua senha"
+        placeholder="Digite sua senha"
         secureTextEntry={true}
       />
 
@@ -59,26 +58,36 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: "#fff",
   },
   title: {
-    marginBottom: 20,
+  fontWeight: 'bold',
+  fontSize: 35,
+  left: 0,
+  marginBottom: 40,
+  alignItems: 'center',
+  paddingHorizontal: 10,
+  marginHorizontal: 40,
   },
   textInput: {
-    backgroundColor: '#FFFFFF',
-    fontSize: 19,
-    padding: 7,
-    marginBottom: 15,
+    borderColor: '#FFFFFF',
+    backgroundColor: '#EBEAEA',
+    borderRadius: 8,
+    fontSize: 16,
+    padding: 15,
+    marginBottom: 8,
     width: '80%',
   },
   button: {
     padding: 12,
-    backgroundColor: '#7DCD9A',
+    backgroundColor: '#0EAB6E',
     alignSelf: 'center',
-    borderRadius: 5,
+    borderRadius: 25,
+    marginTop: 40,
   },
   buttonText: {
     fontWeight: 'bold',
-    fontSize: 22,
+    fontSize: 16,
     color: '#000000',
   },
 });

@@ -143,33 +143,38 @@ const styles = StyleSheet.create({
     color: "#000",
     padding: 17,
     paddingBottom: 0,
+    right: 5,
   },
   subtitulo: {
-    padding: 20,
-    paddingTop: 0,
-    paddingEnd: 30,
+    fontSize: 16,
+    color: '#777',
+    marginBottom: 20,
+    left: 5,
   },
 
   inputContainer: {
+    fontSize: 16,
     marginBottom: 20,
   },
   input: {
-    padding: 10,
+    fontSize: 16,
+    padding: 16,
     marginTop: 5,
     width: 320,
     height: 50,
-    borderRadius: 5,
-    backgroundColor: "#d9d9d9",
+    borderRadius: 8,
+    backgroundColor: '#EBEAEA',
   },
 
   inputContainer2: {
-    backgroundColor: "#d9d9d9",
+    fontSize: 16,
+    backgroundColor: '#EBEAEA',
     borderRadius: 5,
     padding: 10,
     width: 320,
     height: 50,
     justifyContent: "center",
-    color: "#ffff",
+    Color: '#FFFFFF',
   },
   centeredView: {
     flex: 1,
@@ -191,19 +196,19 @@ const styles = StyleSheet.create({
   },
 
   botao: {
-    backgroundColor: "#0EAB6E", // Cor de fundo
-    marginTop: 50,
-    borderRadius: 10,
-    alignItems: "center",
-    width: 150,
-    height: 50,
+  marginTop: 50,
+  backgroundColor: "#0EAB6E", 
+  alignSelf: 'center',
+  borderRadius: 25,
+  width: 150,
+  height: 50,
   },
 
   textbutton: {
     fontSize: 20,
     color: "#000",
     fontWeight: "bold",
-    padding: 10
-  
+    alignSelf: 'center',
+    padding: 13,  
   },
 });

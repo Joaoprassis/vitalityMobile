@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   titulo: {
-    fontSize: 45,
+    fontSize: 38,
     fontWeight: 'bold',
     marginTop: 100,
     textAlign: 'left',
@@ -161,9 +161,10 @@ const styles = StyleSheet.create({
     bottom: 0
   },
   subtitulo: {
-    paddingTop: 0,
-    paddingEnd: 185,
-    paddingBottom: 40,
+    fontSize: 16,
+    color: '#777',
+    marginBottom: 20,
+    right: 80,
   },
   container1: {
     width: '100%',
@@ -172,20 +173,23 @@ const styles = StyleSheet.create({
   btnText: {
     paddingStart: 15,
     fontWeight: 'bold',
-    fontSize: 16
+    fontSize: 16,
+    color: '#777',
   },
   botao: {
     backgroundColor: '#0EAB6E', // Cor de fundo
     justifyContent: 'center',
-    borderRadius: 15,
+    alignSelf: 'center',
+    borderRadius: 25,
     alignItems: 'center',
     width: 150,
     height: 50,
-    marginTop: 30,
   },
   textbutton: {
     fontSize: 20,
-    color: '#000',
-    fontWeight: 'bold'
+    color: "#000",
+    fontWeight: "bold",
+    alignSelf: 'center',
+    padding: 13, 
   }
 });

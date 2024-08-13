@@ -52,6 +52,20 @@ export default function Home() {
     <View style={styles.container}>
     
 
+
+     <Text style={styles.titulo}>Bem-vindo à Nossa Plataforma de Saúde Online! </Text>    
+    <Text style={styles.subtitulo}>Estamos empolgados em tê-lo(a)conosco em nossa comunidade dedicada a melhorar o seu bem-estar. {'\n'}Nossa plataforma foi desenvolvidapara fa cilitar o gerenciamento da sua saúde.
+    </Text>
+
+ 
+    <TouchableOpacity
+    style={styles.botao}
+    onPress={() => navigation.navigate('SignUp')}>
+    <Text style={styles.textbutton}> Avançar </Text>
+    </TouchableOpacity>
+
+
+
       {/* Carrossel de Imagens */}
       <ScrollView
         ref={scrollRef}
@@ -78,6 +92,7 @@ export default function Home() {
         ))}
       </View>
 
+
       <TouchableOpacity
         style={styles.botao}
         onPress={() => navigation.navigate('SignUp')}
@@ -92,6 +107,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+
   },
   titulo: {
     fontSize: 40,
@@ -101,8 +117,10 @@ const styles = StyleSheet.create({
     color: "#47AC5D",
     paddingHorizontal: 10,
     marginHorizontal: 10,
+    marginBottom: 20,
   },
   subtitulo: {
+
     marginTop: 10,
     textAlign: 'center',
     color: "#000",
@@ -135,6 +153,7 @@ const styles = StyleSheet.create({
   },
   activeIndicator: {
     backgroundColor: '#fff',
+
   },
   botao: {
     backgroundColor: '#d9d9d9',

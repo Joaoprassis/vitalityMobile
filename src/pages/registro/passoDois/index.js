@@ -20,7 +20,7 @@ export default function Dashboard2() {
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Qual o seu nível de atividade?</Text>
-      <Text style={styles.subtitulo}>Qualquer mínimo passo conta.</Text>
+      <Text style={styles.subtitulo}> Escolha um nível para prosseguir.</Text>
 
       <SafeAreaView style={styles.container2}>
         <Pressable
@@ -28,7 +28,7 @@ export default function Dashboard2() {
           style={[
             styles.pressable,
             {
-              backgroundColor: selected === "0" ? "#97D29A" : "#EBEAEA",
+              backgroundColor: selected === "0" ? "#7DCD9A" : "#EBEAEA",
             },
           ]}
         >
@@ -44,7 +44,7 @@ export default function Dashboard2() {
           style={[
             styles.pressable,
             {
-              backgroundColor: selected === "1" ? "#97D29A" : "#EBEAEA",
+              backgroundColor: selected === "1" ? "#7DCD9A" : "#EBEAEA",
             },
           ]}
         >
@@ -60,7 +60,7 @@ export default function Dashboard2() {
           style={[
             styles.pressable,
             {
-              backgroundColor: selected === "2" ? "#97D29A" : "#EBEAEA",
+              backgroundColor: selected === "2" ? "#7DCD9A" : "#EBEAEA",
             },
           ]}
         >
@@ -76,7 +76,7 @@ export default function Dashboard2() {
           style={[
             styles.pressable,
             {
-              backgroundColor: selected === "3" ? "#97D29A" : "#EBEAEA",
+              backgroundColor: selected === "3" ? "#7DCD9A" : "#EBEAEA",
             },
           ]}
         >
@@ -106,18 +106,19 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   titulo: {
-    fontSize: 35,
+    fontSize: 38,
     fontWeight: "bold",
     textAlign: "left",
     color: "#000",
     padding: 20,
     paddingBottom: 0,
+    left: 0,
   },
   subtitulo: {
-    padding: 20,
-    paddingTop: 0,
-    paddingEnd: 140,
-    paddingBottom: 60,
+    fontSize: 16,
+    color: '#777',
+    marginBottom: 20,
+    right: 50,
   },
   pressable: {
     marginBottom: 10,
@@ -125,18 +126,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingVertical: 10,
     borderRadius: 15,
-    width: 320,
+    width: 350,
     height: 90,
   },
   btnText: {
     fontSize: 17,
     paddingStart: 15,
-    color: "#000",
+    color: "#777",
     fontWeight: "bold",
   },
   btnText2: {
     paddingStart: 15,
-    color: "#000",
+    color: "#777",
   },
   botao: {
     backgroundColor: "#0EAB6E", // Cor de fundo

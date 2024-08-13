@@ -67,22 +67,22 @@ const navigation = useNavigation();
     />
    
 
-
+    <View style={styles.containerbotoes}>
 
      <TouchableOpacity
-        style={styles.botao}
+        style={styles.botao2}
         onPress={() => navigation.navigate("Dashboard")}
       >
-        <Text style={styles.textbutton}> Avançar </Text>
+        <Text style={styles.textbutton2}> Avançar </Text>
       </TouchableOpacity>
 
        <TouchableOpacity
-        style={styles.botao}
+        style={styles.botao1}
         onPress={() => navigation.navigate("Login")}
       >
-        <Text style={styles.textbutton}> Já tenho conta </Text>
+        <Text style={styles.textbutton1}> Já tenho conta </Text>
       </TouchableOpacity>
-
+      </View>
 
 
   </View>
@@ -96,18 +96,54 @@ container: {
   justifyContent: 'center',
   alignItems: 'center',
   paddingHorizontal: 20,
+  backgroundColor: "#fff",
 },
 title: {
-  fontSize: 24,
-  marginBottom: 20,
+  fontWeight: 'bold',
+  fontSize: 42,
+  left: 0,
+  marginBottom: 40,
+  alignItems: 'center',
+  paddingHorizontal: 10,
+  marginHorizontal: 40,
 },
 input: {
-  width: '100%',
-  height: 40,
-  borderWidth: 1,
-  borderColor: '#ccc',
-  borderRadius: 5,
-  paddingHorizontal: 10,
-  marginBottom: 10,
+ width: '100%',
+  borderColor: '#FFFFFF',
+  borderRadius: 10,
+  padding: 15,
+  fontSize: 16,
+  backgroundColor: '#EBEAEA',
+  alignItems: 'center',
+  marginBottom: 8,
+},
+containerbotoes: {
+  flexDirection: 'row',
+  marginBottom: 25,
+},
+botao2: {
+  padding: 12,
+  backgroundColor: "#0EAB6E", 
+  alignSelf: 'center',
+  borderRadius: 25,
+  marginTop: 25,
+  left: 195,
+},
+textbutton2: {
+  fontWeight: 'bold',
+  fontSize: 16,
+},
+botao1: {
+padding: 12,
+backgroundColor: '#FFFFFF',
+alignSelf: 'center',
+borderRadius: 25,
+marginTop: 25,
+right: 150,
+},
+textbutton1: {
+  fontWeight: 'bold',
+  fontSize: 16,
+  color: "#0EAB6E",
 },
 })

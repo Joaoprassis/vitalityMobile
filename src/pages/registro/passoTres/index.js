@@ -14,7 +14,7 @@ import {
   FlatList,
 } from "react-native";
 
-export default function Dashboard2() {
+export default function Dashboard3() {
   const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);

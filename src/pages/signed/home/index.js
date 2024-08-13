@@ -5,8 +5,8 @@ import {
     StyleSheet,
      TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
-import WaterTracker from '../../Components/WaterTracker';
-import StepCounter from '../../Components/StepCounter';
+import WaterTracker from '../../../Components/WaterTracker';
+import StepCounter from '../../../Components/StepCounter';
 
 function Content() {
 const navigation = useNavigation();

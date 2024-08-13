@@ -2,37 +2,43 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+{/* tela inicial */}
+import Home from '../pages/main/index'
 
-import Home from "../pages/home/index";
-import Dashboard from "../pages/Dashboard";
-import Dashboard2 from "../pages/Dashboard2";
-import Dashboard3 from "../pages/Dashboard3";
-import SignUp from "../pages/SignUp";
-import Login from "../pages/Login";
-import Homework from "../pages/Homework";
+{/* passo a passo de cadastro */}
+import Dashboard from "../pages/registro/passoUm";
+import Dashboard2 from "../pages/registro/passoDois";
+import Dashboard3 from "../pages/registro/passoTres";
 
-import Exercises from "../pages/Exercises";
-import WalkScreen from "../pages/Walk";
-import RunScreen from "../pages/Run";
-import WeightliftherScreen from "../pages/Weightlifther";
-import ArmScreen from "../pages/Arm";
+{/*  login e cadastro */}
+import SignUp from "../pages/cadastro/SignUp";
+import Login from "../pages/cadastro/Login";
 
+{/* tela principal de dashboard */}
+import Homework from "../pages/signed/barraNav";
 
+{/* exercicios */}
+import Exercises from "../pages/signed/exercicios/main-exercicios";
+import Walk from "../pages/signed/exercicios/caminhada";
+import Run from "../pages/signed/exercicios/corrida";
+import Personalizado from "../pages/signed/exercicios/personalizado";
+import ArmScreen from "../pages/signed/exercicios/musculacao";
 
-import RecipesScreen from "../pages/Receits";
-import RecipeDetailScreen from "../pages/Detalhes/RecipeDetail1";
+{/* tela de receitas */}
+import RecipesScreen from "../pages/signed/receitas/main-receitas";
+import RecipeDetailScreen from "../pages/signed/receitas/RecipeDetail1";
+
+{/* telas de configurações */}
 import ConfiguracaoScreen from '../pages/Configuracao';
 import AppearanceScreen from "../pages/Appearance";
-import HelpandSupportScreen from "../pages/HelpandSupport";
 import AccountScreen from '../pages/Conta';
 import PersonalDataScreen from '../pages/DadosP';
 import InviteFriendsScreen from "../pages/InviteFriends";
 import PrivacyPolicyScreen from "../pages/PrivacyPolicy";
 
+{/* tela de ajuda */}
 
-
-
-import SettingsScreen from "../pages/Settings/firstPage";
+import HelpandSupportScreen from "../pages/help";
 
 const Stack = createNativeStackNavigator();
 
@@ -40,7 +46,7 @@ export function AppRoutes() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Walk" 
+        initialRouteName="Home" 
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="Home" component={Home} />
@@ -52,9 +58,9 @@ export function AppRoutes() {
         <Stack.Screen name="Homework" component={Homework} />
 
         <Stack.Screen name="Exercises" component={Exercises} />
-        <Stack.Screen name="WalkScreen" component={WalkScreen} />
-        <Stack.Screen name="Weightlifther" component={WeightliftherScreen} />
-        <Stack.Screen name="Run" component={RunScreen } />
+        <Stack.Screen name="WalkScreen" component={Walk} />
+        <Stack.Screen name="Personalizado" component={Personalizado} />
+        <Stack.Screen name="Run" component={Run} />
         <Stack.Screen name="Arm" component={ArmScreen} />
 
         <Stack.Screen name="Recipes" component={RecipesScreen} />
@@ -70,10 +76,8 @@ export function AppRoutes() {
         <Stack.Screen name="PrivacyPolicy" component={PrivacyPolicyScreen} />   
         
 
-       <Stack.Screen name="Recipes" component={RecipesScreen}/>
-       <Stack.Screen name="RecipeDetail" component={RecipeDetailScreen}/>
 
-       <Stack.Screen name="Settings" component={SettingsScreen}/>
+
        
 
       </Stack.Navigator>

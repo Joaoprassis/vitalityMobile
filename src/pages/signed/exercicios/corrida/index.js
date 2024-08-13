@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function ArmScreen () {
+export default function Run() {
     const [distance, setDistance] = useState(0.25);
     const [passos, setPassos] = useState(0);
     const [tempo, setTempo] = useState(0); // em segundos

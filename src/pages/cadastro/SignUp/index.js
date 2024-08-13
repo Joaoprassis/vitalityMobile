@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {useNavigation } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
+
 
 import { 
 StyleSheet,

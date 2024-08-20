@@ -6,18 +6,19 @@
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
       "supportsTablet": true
     },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+      "expo": {
+        "android": {
+          "adaptiveIcon": {
+            "foregroundImage": "./assets/adaptiveIcon.png",
+            "backgroundColor": "#FFFFFF"
+          }
+        }
       }
     }
   }
-}

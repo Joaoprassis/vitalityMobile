@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet, ScrollView } from 'react-native';
 
-const DadosPessoaisScreen = () => {
+const DadosPessoais = () => {
   return (
     <ScrollView contentContainerStyle={styles.containerb}>
       <Text style={styles.title}>Dados Pessoais</Text>
@@ -72,4 +72,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DadosPessoaisScreen;
+export default DadosPessoais;

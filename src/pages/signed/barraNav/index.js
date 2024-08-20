@@ -1,10 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialIcons } from '@expo/vector-icons';
-import Exercises from '../Exercises';
-import Receits from '../Receits';
-import Content from '../HomeworkContent'
-import Configuracao from '../Configuracao'
+import Exercises from '../exercicios/main-exercicios';
+import RecipesScreen from '../receitas/main-receitas';
+import Home from '../receitas/main-receitas';
+import SettingScreen from '../config/main-config';
 
 
 import {
@@ -26,17 +26,17 @@ const Homework = () => {
           let iconSize;
 
 
-          if (route.name === 'Homework') {
+          if (route.name === 'Home') {
             iconName = 'home';
             iconSize = 30;
             
           } else if (route.name === 'Exercises') {
             iconName = 'fitness-center';
-          } else if (route.name === 'Receits') {
-            iconName = 'receipt';
+          } else if (route.name === 'Recipes') {
+            iconName = 'recipes';
           }
-           else if (route.name === 'Configuracao'){
-            iconName = 'Configuration'
+           else if (route.name === 'Setting'){
+            iconName = 'setting'
           }
           return <MaterialIcons name={iconName} size={size} color={color} />;
        },
@@ -56,10 +56,10 @@ const Homework = () => {
     >
 
 
-      <Tab.Screen name="Homework" component={Content} options={{ headerShown: false }} />
+      <Tab.Screen name="Home" component={Home} options={{ headerShown: false }} />
       <Tab.Screen name="Exercises" component={Exercises} options={{ headerShown: false }} />
-      <Tab.Screen name="Receits" component={Receits} options={{ headerShown: false }} />
-      <Tab.Screen name="Configuracao" component={Configuracao} options={{ headerShown: false }} />
+      <Tab.Screen name="Recipes" component={RecipesScreen} options={{ headerShown: false }} />
+      <Tab.Screen name="Configuracao" component={ConfiguracaoScreen} options={{ headerShown: false }} />
     </Tab.Navigator>
   );
 };

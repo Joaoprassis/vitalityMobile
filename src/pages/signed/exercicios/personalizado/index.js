@@ -52,7 +52,7 @@ export default function Personalizado(){
             <Text style={styles.subtitle}>Cronometre seu tempo praticando e veja seu desempenho total.</Text>
             <View style={styles.imagePlaceholder}>
                 <Image
-                    source={require('../../assets/WhatsApp Image 2024-08-08 at 07.24.03.jpeg')}
+                    source={require('../../../../assets/patinando.jpg')}
                     style={styles.image}
                 />
             </View>

@@ -8,8 +8,8 @@ const ConfiguracaoScreen = () => {
   const navigation = useNavigation();
 
   const routes = [
-    { label: 'Conta', route: 'Account' },
-    { label: 'Dados Pessoais', route: 'PersonalData' },
+    { label: 'Conta', route: 'DadosConta' },
+    { label: 'Dados Pessoais', route: 'DadosPessoaisScreen' },
     { label: 'Privacidade e Segurança', route: 'PrivacyPolicy' },
     { label: 'Notificações', route: 'Notifications' },
     { label: 'Aparência', route: 'Appearance' },

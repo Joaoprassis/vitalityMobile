@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 {/* tela inicial */}
-import Home from '../pages/main/index'
+import Home from '../pages/signed/home'
 
 {/* passo a passo de cadastro */}
 import Dashboard from "../pages/registro/passoUm";
@@ -29,12 +29,12 @@ import RecipesScreen from "../pages/signed/receitas/main-receitas";
 import RecipeDetailScreen from "../pages/signed/receitas/RecipeDetail1";
 
 {/* telas de configurações */}
-import ConfiguracaoScreen from '../pages/Configuracao';
-import AppearanceScreen from "../pages/Appearance";
-import AccountScreen from '../pages/Conta';
-import PersonalDataScreen from '../pages/DadosP';
-import InviteFriendsScreen from "../pages/InviteFriends";
-import PrivacyPolicyScreen from "../pages/PrivacyPolicy";
+import ConfiguracaoScreen from "../pages/signed/config/main-config";
+import DadosConta from "../pages/signed/config/dados-conta";
+import AppearanceScreen from "../pages/signed/config/aparencia";
+import DadosPessoaisScreen from "../pages/signed/config/dados-pessoais";
+import InviteFriendsScreen from "../pages/signed/config/invite-friends";
+import PrivacyPolicyScreen from "../pages/signed/config/privacidade";
 
 {/* tela de ajuda */}
 
@@ -66,10 +66,9 @@ export function AppRoutes() {
         <Stack.Screen name="Recipes" component={RecipesScreen} />
         <Stack.Screen name="RecipeDetail" component={RecipeDetailScreen} />
 
-
         <Stack.Screen name="Configuracao" component={ConfiguracaoScreen} />
-        <Stack.Screen name="Account" component={AccountScreen} />
-        <Stack.Screen name="PersonalData" component={PersonalDataScreen} />
+        <Stack.Screen name="DadosConta" component={DadosConta} />
+        <Stack.Screen name="DadosPessoais" component={DadosPessoaisScreen} />
         <Stack.Screen name="HelpandSupport" component={HelpandSupportScreen} />
         <Stack.Screen name="InviteFriends" component={InviteFriendsScreen} />
         <Stack.Screen name="Appearance" component={AppearanceScreen} />
